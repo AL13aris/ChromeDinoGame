@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GROUND
   - REMOVEOB
+  - BackGround
   layers:
   - Default
   - TransparentFX
