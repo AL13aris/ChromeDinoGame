@@ -15,7 +15,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bIsJumping = false;
-        JumpPower = 8;
+        JumpPower = 9;
     }
 
     // Update is called once per frame
