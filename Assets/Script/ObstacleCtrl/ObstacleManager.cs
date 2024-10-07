@@ -18,33 +18,33 @@ public class ObstacleManager : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        //Àå¾Ö¹°À» ÀÏÁ¤ ½Ã°£¸¶´Ù ½ºÆù
+        //ì¥ì• ë¬¼ì„ ì¼ì • ì‹œê°„ë§ˆë‹¤ ìŠ¤í°
     }
 
     private void SpawnPosition()
     {
-        //Àå¾Ö¹° ½ºÆù À§Ä¡ Á¤ÇÏ±â
+        //ì¥ì• ë¬¼ ìŠ¤í° ìœ„ì¹˜ ì •í•˜ê¸°
     }
 
     private void SpawnItem()
     {
-        //½Ã°£ ³²À»¶§ ±¸Çö ¿¹Á¤
+        //ì‹œê°„ ë‚¨ì„ë•Œ êµ¬í˜„ ì˜ˆì •
 
     }
 
     //private void Remove()
     //{
-    //    //Àå¾Ö¹° »èÁ¦ <-Obstacle·Î ÀÌµ¿
+    //    //ì¥ì• ë¬¼ ì‚­ì œ <-Obstacleë¡œ ì´ë™
     //}
 
     //private void BirdArray()
     //{
-    //    //±¸Çö ¾È ÇÒ¼öµµ ÀÖÀ½
+    //    //êµ¬í˜„ ì•ˆ í• ìˆ˜ë„ ìˆìŒ
     //}
 
     //private void MushroomArray()
     //{
-    //    //±¸Çö ¾È ÇÒ¼öµµ ÀÖÀ½
+    //    //êµ¬í˜„ ì•ˆ í• ìˆ˜ë„ ìˆìŒ
     //}
 
 }

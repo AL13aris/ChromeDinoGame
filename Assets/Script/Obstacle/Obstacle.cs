@@ -18,24 +18,24 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Hit() ´ëÃ¼
+        //Hit() ëŒ€ì²´
     }
 
     private void Move()
     {
-        //Àå¾Ö¹°ÀÌ ¿ÞÂÊÀ¸·Î ¿òÁ÷ÀÌ°Ô
+        //ìž¥ì• ë¬¼ì´ ì™¼ìª½ìœ¼ë¡œ ì›€ì§ì´ê²Œ
     }
 
     private void Crash()
     {
-        //PlayerCrash->Crash·Î º¯°æ
-        //ÇÃ·¹ÀÌ¾î¿Í Ãæµ¹ÇÏ¸é º»ÀÎ »èÁ¦
+        //PlayerCrash->Crashë¡œ ë³€ê²½
+        //í”Œë ˆì´ì–´ì™€ ì¶©ëŒí•˜ë©´ ë³¸ì¸ ì‚­ì œ
         //
     }
 
     private void UpdateSpeed()
     {
-        //½Ã°£ÀÌ Áö³¯¶§¸¶´Ù ¼Óµµ Áõ°¡
+        //ì‹œê°„ì´ ì§€ë‚ ë•Œë§ˆë‹¤ ì†ë„ ì¦ê°€
     }
 
 
