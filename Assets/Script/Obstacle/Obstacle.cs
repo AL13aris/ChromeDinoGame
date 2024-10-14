@@ -5,7 +5,10 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class Obstacle : MonoBehaviour
 {
-    public float ObstacleMoveSpeed;
+
+    public float initialMoveSpeed = 5f;  // 초기 속도
+    public float acceleration = 0.001f;    // 초당 가속도 (속도 증가율)
+    private float currentMoveSpeed;      // 현재 속도
     Rigidbody2D rb;
 
 
@@ -15,7 +18,9 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        currentMoveSpeed = initialMoveSpeed;  // 초기 속도로 설정
+        rb.velocity = Vector2.left * currentMoveSpeed;  // 왼쪽으로 초기 속도로 이동 시작
+
     }
 
     // Update is called once per frame
@@ -41,8 +46,12 @@ public class Obstacle : MonoBehaviour
 
     private void Move()
     {
-        rb.AddForce(Vector2.left * ObstacleMoveSpeed ,ForceMode2D.Force);
-        //장애물이 왼쪽으로 움직이게
+
+        // 매 프레임마다 가속도를 추가
+        currentMoveSpeed += acceleration * Time.deltaTime;
+
+        // 속도가 업데이트된 상태로 계속 이동
+        rb.velocity = Vector2.left * currentMoveSpeed;
     }
 
     private void Crash()

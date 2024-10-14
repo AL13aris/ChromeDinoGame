@@ -122,6 +122,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &369679479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 369679481}
+  - component: {fileID: 369679480}
+  m_Layer: 0
+  m_Name: ObstacleSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &369679480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369679479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0126007043179d4aa2818871fe108a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePrefab: {fileID: 5080234396660396863, guid: 0d8d7874406ad6e4f808a0f91c6dda6e, type: 3}
+  spawnPosition: {fileID: 369679481}
+  minSpawnTime: 2
+  maxSpawnTime: 5
+--- !u!4 &369679481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369679479}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.18, y: -1.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &454448931
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3658296182697344101, guid: 235df7c0f67eda946965003cc11dd9df, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5551081714454589388, guid: 235df7c0f67eda946965003cc11dd9df, type: 3}
       propertyPath: m_Name
@@ -531,6 +579,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1776476040085233478, guid: 0d8d7874406ad6e4f808a0f91c6dda6e, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776476040085233478, guid: 0d8d7874406ad6e4f808a0f91c6dda6e, type: 3}
+      propertyPath: ObstacleMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3941543670433511529, guid: 0d8d7874406ad6e4f808a0f91c6dda6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.99
@@ -575,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 5856940588867273455, guid: 0d8d7874406ad6e4f808a0f91c6dda6e, type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -591,6 +651,14 @@ PrefabInstance:
     - target: {fileID: 264109956445856571, guid: 5eb698e5f95f1b94592cde6e058359b1, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 360241412927214438, guid: 5eb698e5f95f1b94592cde6e058359b1, type: 3}
+      propertyPath: JumpPower
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 360241412927214438, guid: 5eb698e5f95f1b94592cde6e058359b1, type: 3}
+      propertyPath: fallMultiplier
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 968564971001356526, guid: 5eb698e5f95f1b94592cde6e058359b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -632,6 +700,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 992160119931818364, guid: 5eb698e5f95f1b94592cde6e058359b1, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992160119931818364, guid: 5eb698e5f95f1b94592cde6e058359b1, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -648,3 +724,4 @@ SceneRoots:
   - {fileID: 498200021977892122}
   - {fileID: 928692407}
   - {fileID: 1555676133}
+  - {fileID: 369679481}
