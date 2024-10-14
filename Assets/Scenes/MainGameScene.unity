@@ -155,6 +155,10 @@ MonoBehaviour:
   spawnPosition: {fileID: 369679481}
   minSpawnTime: 2
   maxSpawnTime: 5
+  initialMoveSpeed: 5
+  acceleration: 0.001
+  backgroundManager: {fileID: 928692408}
+  backgroundSpeedMultiplier: 0.05
 --- !u!4 &369679481
 Transform:
   m_ObjectHideFlags: 0
@@ -164,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 369679479}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.18, y: -1.36, z: 0}
+  m_LocalPosition: {x: 30.2, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.25
+  CurrentSpeed: 0
 --- !u!1 &1555676131
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +584,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1776476040085233478, guid: 0d8d7874406ad6e4f808a0f91c6dda6e, type: 3}
+      propertyPath: obstacleManager
+      value: 
+      objectReference: {fileID: 369679480}
     - target: {fileID: 1776476040085233478, guid: 0d8d7874406ad6e4f808a0f91c6dda6e, type: 3}
       propertyPath: initialMoveSpeed
       value: 5

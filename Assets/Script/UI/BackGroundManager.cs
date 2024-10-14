@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class BackGroundManager : MonoBehaviour
 {
+    
+    public float speed = 0.25f;
 
-    public float speed;
+    [SerializeField]
+    private float CurrentSpeed;
+    
     float offset_x;
 
 
@@ -35,8 +39,8 @@ public class BackGroundManager : MonoBehaviour
     }
 
     //일정 점수마다 속도를 증가
-    private void UpdateSpeed()
+    public void UpdateSpeed(float newSpeed)
     {
-
+        speed = newSpeed;  // 장애물 매니저에서 제공하는 속도로 배경 속도 업데이트
     }
 }

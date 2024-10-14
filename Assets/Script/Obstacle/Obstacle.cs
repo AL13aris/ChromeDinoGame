@@ -8,8 +8,16 @@ public class Obstacle : MonoBehaviour
 
     public float initialMoveSpeed = 5f;  // 초기 속도
     public float acceleration = 0.001f;    // 초당 가속도 (속도 증가율)
-    private float currentMoveSpeed;      // 현재 속도
+
+    
+    // 모든 장애물이 공유하는 속도 (static으로 설정)
+    [SerializeField]
+    private static float currentMoveSpeed;
+
     Rigidbody2D rb;
+
+
+    private ObstacleManager obstacleManager;  // 장애물 매니저 참조
 
 
 
@@ -18,8 +26,12 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentMoveSpeed = initialMoveSpeed;  // 초기 속도로 설정
+        // ObstacleManager를 찾아서 참조
+        obstacleManager = FindObjectOfType<ObstacleManager>();
+
         rb.velocity = Vector2.left * currentMoveSpeed;  // 왼쪽으로 초기 속도로 이동 시작
+
+
 
     }
 
@@ -47,11 +59,10 @@ public class Obstacle : MonoBehaviour
     private void Move()
     {
 
-        // 매 프레임마다 가속도를 추가
-        currentMoveSpeed += acceleration * Time.deltaTime;
+        // 장애물 매니저로부터 현재 속도를 가져와서 이동
+        float currentSpeed = obstacleManager.GetCurrentSpeed();
+        rb.velocity = Vector2.left * currentSpeed;
 
-        // 속도가 업데이트된 상태로 계속 이동
-        rb.velocity = Vector2.left * currentMoveSpeed;
     }
 
     private void Crash()
@@ -61,10 +72,10 @@ public class Obstacle : MonoBehaviour
         //
     }
 
-    private void UpdateSpeed()
-    {
-        //시간이 지날때마다 속도 증가
-    }
+    //private void UpdateSpeed()
+    //{
+    //    //시간이 지날때마다 속도 증가<-장애물 매니저로 이동
+    //}
 
 
 }
