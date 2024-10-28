@@ -5,27 +5,24 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI curr;
-    public TextMeshProUGUI high;
-    public float curr_time;
-    public float high_time;
+    public TextMeshProUGUI highScoreText; // 최고 점수 텍스트 UI
+    public TextMeshProUGUI currentScoreText;
 
     // Start is called before the first frame update
     private void Start()
     {
-
+        // PlayerPrefs에서 최고 점수를 불러옵니다.
+        float highScore = PlayerPrefs.GetFloat("HighScore", 0);
+        highScoreText.text = Mathf.Round(highScore).ToString(); // 최고 점수만 표시
+        float currentScore = PlayerPrefs.GetFloat("CurrentScore", 0);
+        currentScoreText.text = Mathf.Round(currentScore).ToString();
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        curr_time += Time.deltaTime * 10;
-        curr.text = "" + Mathf.Round(curr_time);
 
-        if (curr_time > high_time)
-        {
-            high.text = "" + Mathf.Round(high_time);
-        }
     }
 
     //게임오버 UI 표시

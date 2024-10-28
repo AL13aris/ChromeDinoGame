@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class ObstacleManager : MonoBehaviour
 {
-    public GameObject obstaclePrefab;  // 소환할 장애물 프리팹
-    public Transform spawnPosition;      // 소환할 위치
-    public float minSpawnTime = 2f;    // 최소 소환 시간 간격
-    public float maxSpawnTime = 5f;    // 최대 소환 시간 간격
+    public GameObject groundObstaclePrefab; // 지상 장애물 프리팹  <---- 새로 추가
+    public GameObject airObstaclePrefab;    // 공중 장애물 프리팹  <---- 새로 추가
+
+
+    public Transform[] groundSpawnPoints;   // 지상 스폰 포인트 배열  <---- 새로 추가
+    public Transform[] airSpawnPoints;      // 공중 스폰 포인트 배열  <---- 새로 추가
+
+    public float groundMinSpawnTime = 2f;   // 지상 장애물 최소 소환 시간 간격 <---- 새로 추가
+    public float groundMaxSpawnTime = 5f;   // 지상 장애물 최대 소환 시간 간격 <---- 새로 추가
+    public float airMinSpawnTime = 3f;      // 공중 장애물 최소 소환 시간 간격 <---- 새로 추가
+    public float airMaxSpawnTime = 6f;      // 공중 장애물 최대 소환 시간 간격 <---- 새로 추가
 
     public float initialMoveSpeed = 5f;  // 장애물들의 초기 속도
     public float acceleration = 0.001f;  // 초당 가속도 (속도 증가율)
@@ -16,14 +23,19 @@ public class ObstacleManager : MonoBehaviour
     public BackGroundManager backgroundManager;  // 배경 관리자 참조
     public float backgroundSpeedMultiplier = 0.05f;  // 배경 속도 증가율 (장애물 속도에 대한 배수)
 
+    private GameManager gameManager; // GameManager 참조 변수 <---- 새로 추가
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnObstacleRoutine());
+        StartCoroutine(GroundObstacleSpawnRoutine());  // 지상 장애물 스폰 코루틴 시작 <---- 새로 추가
+        StartCoroutine(AirObstacleSpawnRoutine());     // 공중 장애물 스폰 코루틴 시작 <---- 새로 추가
         ResetSpeed();  // 게임 시작 시 속도 초기화
         // BackGroundManager를 찾아서 참조 (씬에 존재하는 오브젝트를 찾음)
         backgroundManager = FindObjectOfType<BackGroundManager>();
+
+        // GameManager 인스턴스를 찾아 참조 설정 <---- 새로 추가
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -37,6 +49,14 @@ public class ObstacleManager : MonoBehaviour
         {
             backgroundManager.UpdateSpeed(currentMoveSpeed * backgroundSpeedMultiplier);  // 배경 속도는 장애물 속도의 배수로 설정
         }
+
+
+        // 플레이어가 존재하지 않으면 GameOver 호출
+        if (GameObject.FindWithTag("Player") == null)
+        {
+            gameManager.GameOver();
+        }
+
     }
 
     private void UpdateSpeed()
@@ -56,18 +76,29 @@ public class ObstacleManager : MonoBehaviour
     //}
 
     // 장애물을 소환하는 코루틴
-    IEnumerator SpawnObstacleRoutine()
+   
+
+    // 지상 장애물을 스폰하는 코루틴
+    IEnumerator GroundObstacleSpawnRoutine()  // <---- 새로 추가
     {
-        while (true) // 계속 반복
+        while (true)
         {
-            // 랜덤한 시간 간격 계산 (2초에서 5초 사이)
-            float spawnInterval = Random.Range(minSpawnTime, maxSpawnTime);
+            float spawnInterval = Random.Range(groundMinSpawnTime, groundMaxSpawnTime); // <---- 새로 추가
+            int spawnIndex = Random.Range(0, groundSpawnPoints.Length);
+            Instantiate(groundObstaclePrefab, groundSpawnPoints[spawnIndex].position, Quaternion.identity);
+            yield return new WaitForSeconds(spawnInterval); // <---- 새로 추가
+        }
+    }
 
-            // 프리팹 소환
-            Instantiate(obstaclePrefab, spawnPosition.position, Quaternion.identity);
-
-            // 랜덤 시간만큼 대기
-            yield return new WaitForSeconds(spawnInterval);
+    // 공중 장애물을 스폰하는 코루틴
+    IEnumerator AirObstacleSpawnRoutine()  // <---- 새로 추가
+    {
+        while (true)
+        {
+            float spawnInterval = Random.Range(airMinSpawnTime, airMaxSpawnTime); // <---- 새로 추가
+            int spawnIndex = Random.Range(0, airSpawnPoints.Length);
+            Instantiate(airObstaclePrefab, airSpawnPoints[spawnIndex].position, Quaternion.identity);
+            yield return new WaitForSeconds(spawnInterval); // <---- 새로 추가
         }
     }
 

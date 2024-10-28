@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Game : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+
+    public ScoreManager scoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,36 +17,39 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //게임 시작 버튼
-    private void StartGame()
+    public void StartGame()
     {
-        
+        SceneManager.LoadScene("MainGameScene");
     }
 
     //게임 오버UI 전환
-    private void GameOver()
+    public void GameOver()
     {
-
+        scoreManager.SaveCurrentScore(); // 현재 점수 저장
+        SceneManager.LoadScene("GameOverScene"); // 게임 오버 씬 로드
+        
     }
 
-    //게임 재시작 버튼
-    private void RestartGame()
+    //게임 재시작
+    public void RestartGame()
     {
-
+        
+        SceneManager.LoadScene("TitleScene"); // 씬 다시 로드
     }
 
-    //게임 일시정지 버튼
-    private void PauseGame()
+    //게임 일시정지
+    public void PauseGame()
     {
-
+        //Time.timeScale = Time.timeScale == 0 ? 1 : 0; // 시간 정지/재개
     }
 
     //카운트다운을 한 후 게임을 실행시킵니다. StartGame()
     private void CountDown()
     {
-        
+
     }
 }
