@@ -11,11 +11,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        // PlayerPrefs에서 최고 점수를 불러옵니다.
-        float highScore = PlayerPrefs.GetFloat("HighScore", 0);
-        highScoreText.text = Mathf.Round(highScore).ToString(); // 최고 점수만 표시
-        float currentScore = PlayerPrefs.GetFloat("CurrentScore", 0);
-        currentScoreText.text = Mathf.Round(currentScore).ToString();
+        LoadScore();
     }
 
 
@@ -23,6 +19,15 @@ public class UIManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void LoadScore()
+    {
+        // PlayerPrefs에서 최고 점수를 불러옵니다.
+        float highScore = PlayerPrefs.GetFloat("HighScore", 0);
+        highScoreText.text = Mathf.Round(highScore).ToString(); // 최고 점수만 표시
+        float currentScore = PlayerPrefs.GetFloat("CurrentScore", 0);
+        currentScoreText.text = Mathf.Round(currentScore).ToString();
     }
 
     //게임오버 UI 표시
