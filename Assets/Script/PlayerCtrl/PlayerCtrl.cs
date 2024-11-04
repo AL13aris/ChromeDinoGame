@@ -11,6 +11,7 @@ public class PlayerCtrl : MonoBehaviour
     public float lowJumpMultiplier = 2f; // 낮은 점프 가속도
     private Rigidbody2D rb;
 
+    public VibrationManager vibrationManager;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,9 @@ public class PlayerCtrl : MonoBehaviour
             Debug.LogWarning("점프키를 눌렀습니다");
             bIsJumping = true;
             rb.velocity = Vector2.up * JumpPower;  // Impulse 대신 velocity로 바로 점프
+
+            // 500ms 동안 진동
+            vibrationManager.TriggerCustomVibration(500);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

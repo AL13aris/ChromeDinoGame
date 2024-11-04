@@ -5,6 +5,9 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class Obstacle : MonoBehaviour
 {
+    
+    
+    public VibrationManager vibrationManager;
 
     public float initialMoveSpeed = 5f;  // 초기 속도
     public float acceleration = 0.001f;    // 초당 가속도 (속도 증가율)
@@ -31,6 +34,11 @@ public class Obstacle : MonoBehaviour
 
         rb.velocity = Vector2.left * currentMoveSpeed;  // 왼쪽으로 초기 속도로 이동 시작
 
+        if(vibrationManager == null)
+        {
+            vibrationManager = FindObjectOfType<VibrationManager>();
+        }
+
 
 
     }
@@ -47,6 +55,9 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
+            // 패턴 진동: 즉시 진동 시작, 500ms 진동, 200ms 멈춤, 500ms 진동 반복 (-1은 반복 없음)
+            long[] pattern = { 0, 500, 200, 1000 };
+            vibrationManager.TriggerPatternVibration(pattern, -1);
             
         }
         if(collision.gameObject.CompareTag("REMOVEOB"))
