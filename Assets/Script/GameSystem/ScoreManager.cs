@@ -15,6 +15,15 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 게임이 처음 실행되는 경우 기존 점수 초기화
+        if (!PlayerPrefs.HasKey("HasPlayedBefore"))
+        {
+            PlayerPrefs.SetFloat("HighScore", 0);
+            PlayerPrefs.SetFloat("CurrentScore", 0);
+            PlayerPrefs.SetInt("HasPlayedBefore", 1); // 첫 실행 표시
+            PlayerPrefs.Save();
+        }
+
         // 게임 시작 시 최고 점수를 불러옵니다.
         high_time = PlayerPrefs.GetFloat("HighScore", 0);
         high.text = Mathf.Round(high_time).ToString(); // 최고 점수만 표시
