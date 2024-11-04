@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor.U2D.Sprites;
+#endif
 using UnityEngine;
 
 public class BackGroundManager : MonoBehaviour
