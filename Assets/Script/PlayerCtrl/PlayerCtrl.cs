@@ -36,8 +36,8 @@ public class PlayerCtrl : MonoBehaviour
             bIsJumping = true;
             rb.velocity = Vector2.up * JumpPower;  // Impulse 대신 velocity로 바로 점프
 
-            // 500ms 동안 진동
-            vibrationManager.TriggerCustomVibration(500);
+            // 500ms 동안 진동 0~255까지 진동 세기 조절 0:진동 없음 255:최대 진동
+            vibrationManager.TriggerCustomVibration(500,10);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
