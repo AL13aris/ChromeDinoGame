@@ -7,6 +7,7 @@ TagManager:
   - GROUND
   - REMOVEOB
   - BackGround
+  - ENEMY
   layers:
   - Default
   - TransparentFX

@@ -51,17 +51,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(this.gameObject);
-            Destroy(collision.gameObject);
-            // 패턴 진동: 즉시 진동 시작, 500ms 진동, 200ms 멈춤, 500ms 진동 반복 (-1은 반복 없음)
-            long[] pattern = { 0, 500, 200, 1000 };
-            int[] amplitudes = { 0, 30, 0, 100 }; // 진동 강도 배열 0~255까지
-            int repeat = -1; // 반복 없음
-            vibrationManager.TriggerPatternVibration(pattern, amplitudes, repeat);
-            
-        }
+        
         if(collision.gameObject.CompareTag("REMOVEOB"))
         {
             Destroy(this.gameObject);
