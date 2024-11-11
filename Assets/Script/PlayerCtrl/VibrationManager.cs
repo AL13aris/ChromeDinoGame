@@ -18,7 +18,7 @@ public class VibrationManager : MonoBehaviour
 
     public void TriggerCustomVibration(long milliseconds, int amplitude)
     {
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID
         // Android 네이티브 Vibrator 클래스에 접근
         AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
@@ -47,7 +47,7 @@ public class VibrationManager : MonoBehaviour
 
     public void TriggerPatternVibration(long[] pattern, int[] amplitudes, int repeat)
     {
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID
         AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
         AndroidJavaObject vibrator = currentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");
@@ -75,7 +75,7 @@ public class VibrationManager : MonoBehaviour
 
     public void StopVibration()
     {
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID
         AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
         AndroidJavaObject vibrator = currentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");
