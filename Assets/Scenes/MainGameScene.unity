@@ -1540,7 +1540,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
       propertyPath: m_LocalScale.x
-<<<<<<< Updated upstream
+
+      value: 25.316229
+
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 33.68304
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
+      propertyPath: m_LocalPosition.y
+
+      value: -10.96
+
+
       value: 25.316229
       objectReference: {fileID: 0}
     - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
@@ -1554,37 +1571,7 @@ PrefabInstance:
     - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
       propertyPath: m_LocalPosition.y
       value: -10.96
-=======
-<<<<<<< HEAD
-      value: 25.67178
-      objectReference: {fileID: 0}
-    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 33.423843
-      objectReference: {fileID: 0}
-    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -11.01
-=======
-      value: 25.316229
-      objectReference: {fileID: 0}
-    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 33.195377
-      objectReference: {fileID: 0}
-    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0822
-      objectReference: {fileID: 0}
-    - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.96
->>>>>>> cd26a1b3f1560b01c91aaac5d26c38722cb74413
->>>>>>> Stashed changes
+
       objectReference: {fileID: 0}
     - target: {fileID: 3056051597165787383, guid: 2d56dc1a12f389b4d9dde24a0d106867, type: 3}
       propertyPath: m_LocalPosition.z
