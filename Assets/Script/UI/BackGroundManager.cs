@@ -9,6 +9,7 @@ public class BackGroundManager : MonoBehaviour
 {
     
     public float speed = 0.25f;
+    public float BackgroundSpeed = 0;
 
     [SerializeField]
     private float CurrentSpeed;
@@ -27,13 +28,13 @@ public class BackGroundManager : MonoBehaviour
     void Update()
     {
         ScrollBackGround();
-
+        
     }
 
     //배경을 일정속도로 움직임
     public void ScrollBackGround()
     {
-        offset_x += (speed * Time.deltaTime);
+        offset_x += (BackgroundSpeed * speed * Time.deltaTime);
 
         Vector2 offset = new Vector2(offset_x, 0);
         GetComponent<Renderer>().material.SetTextureOffset("_MainTex", offset);
