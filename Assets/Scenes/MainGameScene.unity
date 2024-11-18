@@ -1636,7 +1636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3031429898951102064, guid: bffea856291a1e44c8aec6e9658f13ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.89
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3210349602180639370, guid: bffea856291a1e44c8aec6e9658f13ee, type: 3}
       propertyPath: scrollAmount
@@ -1648,7 +1648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4752952766811883920, guid: bffea856291a1e44c8aec6e9658f13ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5467370346899450546, guid: bffea856291a1e44c8aec6e9658f13ee, type: 3}
       propertyPath: scrollAmount
@@ -1664,11 +1664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7498104303622575168, guid: bffea856291a1e44c8aec6e9658f13ee, type: 3}
       propertyPath: scrollAmount
-      value: 17.89
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 7912347328867721051, guid: bffea856291a1e44c8aec6e9658f13ee, type: 3}
       propertyPath: scrollAmount
-      value: 17.89
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 8576308731243665986, guid: bffea856291a1e44c8aec6e9658f13ee, type: 3}
       propertyPath: scrollAmount

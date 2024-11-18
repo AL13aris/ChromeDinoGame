@@ -24,7 +24,7 @@ public class BackgroundScrollingTilemap : MonoBehaviour
         obstacleManager = FindObjectOfType<ObstacleManager>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // 장애물 매니저의 기본 속도와 연동
         if (obstacleManager != null)

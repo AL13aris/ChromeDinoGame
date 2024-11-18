@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        QualitySettings.vSyncCount = 0; // VSync 비활성화
+        Application.targetFrameRate = 60; // 60 FPS로 고정
+        Time.fixedDeltaTime = 1.0f / 60.0f; // 물리 연산도 60 FPS에 맞춤
     }
 
     // Update is called once per frame
