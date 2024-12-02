@@ -25,9 +25,9 @@ public class UIManager : MonoBehaviour
     {
         // PlayerPrefs에서 최고 점수를 불러옵니다.
         float highScore = PlayerPrefs.GetFloat("HighScore", 0);
-        highScoreText.text = Mathf.Round(highScore).ToString(); // 최고 점수만 표시
+        highScoreText.text = Mathf.Round(highScore).ToString(); // 최고 점수
         float currentScore = PlayerPrefs.GetFloat("CurrentScore", 0);
-        currentScoreText.text = Mathf.Round(currentScore).ToString();
+        currentScoreText.text = Mathf.Round(currentScore).ToString();//현재 점수
     }
 
     //게임오버 UI 표시
