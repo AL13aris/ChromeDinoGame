@@ -26,6 +26,12 @@ public class BackgroundScrollingTilemap : MonoBehaviour
 
     private void FixedUpdate()
     {
+        ParallaxBackGround();
+    }
+
+    private void ParallaxBackGround()
+    {
+
         // 장애물 매니저의 기본 속도와 연동
         if (obstacleManager != null)
         {
@@ -44,6 +50,4 @@ public class BackgroundScrollingTilemap : MonoBehaviour
             transform.position = target.position - moveDirection * scrollAmount;
         }
     }
-
-
 }
