@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    //게임 재시작
+    //게임 타이틀로 돌아가기
     public void RestartGame()
     {
         
