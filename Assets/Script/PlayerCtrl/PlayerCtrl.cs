@@ -52,7 +52,7 @@ public class PlayerCtrl : MonoBehaviour
             animator.SetBool("IsJumping", true);
             animator.SetBool("IsFalling", false);
 
-            // 500ms 동안 진동 0~255까지 진동 세기 조절 0:진동 없음 255:최대 진동
+            // 100ms 동안 진동 0~255까지 진동 세기 조절 0:진동 없음 255:최대 진동
             vibrationManager.TriggerCustomVibration(100,128);
         }
     }
@@ -82,8 +82,8 @@ public class PlayerCtrl : MonoBehaviour
         isPlayerDead = true;
         animator.SetBool("IsDead", true); // 죽음 애니메이션 트리거
         rb.velocity = Vector2.zero; // 움직임 멈춤
-        rb.isKinematic = false; // 물리 연산 중지 (필요에 따라 설정)
-        rb.gravityScale = 1f;
+        rb.isKinematic = false; 
+        
 
         // 패턴 진동: 즉시 진동 시작, 500ms 진동, 200ms 멈춤, 500ms 진동 반복 (-1은 반복 없음)
         long[] pattern = { 0, 100, 50, 100 };
